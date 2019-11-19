@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+
+    使用 spring boot initializer 创建的项目， 其默认的父项目， 此处统一使用自己创建时的父项目
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.1.RELEASE</version>
+        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+    </parent>
+
+    -->
+
+    <parent>
+        <groupId>com.dy</groupId>
+        <artifactId>spring_boot</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!--
+
+    使用 Spring boot 的自动构建工具，不会自动设置依赖父项目，需要手动修改
+
+    <groupId>com.dy</groupId>
+    <artifactId>spring_boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-boot-config</name>
+    <description>initializer project</description>
+
+    -->
+
+    <artifactId>spring_boot-config</artifactId>
+    <name>spring-boot-config</name>
+    <description>initializer project</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

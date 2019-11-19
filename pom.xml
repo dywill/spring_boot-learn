@@ -17,6 +17,7 @@
 
     <modules>
         <module>helloworld</module>
+        <module>spring_boot-config</module>
     </modules>
 
 
