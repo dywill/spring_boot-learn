@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+person:
+  firstName: jack
+  age: 12
+  gender: false
+  birth: 2020/1/1
+  list:
+    - aaa
+    - bbb
+  map:
+    k1: v1
+    k2: v2
+  pet:
+    name: doggy
+    age: 2

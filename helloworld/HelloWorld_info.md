@@ -67,7 +67,7 @@
                 组合注解:@Import(AutoConfigurationPackages.Registrar.class) 给容器中导入了一个组件
                 其作用为将主配置类的所在包以及所在包下的所有子包下的所有Spring组件扫描加入到Spring容器之中
                   
-            @Import({EnableAutoConfigurationImportSelector.class}): 导入主键的选择器
+            @Import({EnableAutoConfigurationImportSelector.class}): 导入组件的选择器
                 会给容器中导入xxxAutoConfiguration（自动配置类），该自动配置类即避免我们手动编写大量默认配置    
         ``` 
         

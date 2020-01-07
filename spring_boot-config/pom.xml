@@ -59,6 +59,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--用于生成配置和源文件（@ConfigurationProperties）关联的jar-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
     </dependencies>
 
     <build>

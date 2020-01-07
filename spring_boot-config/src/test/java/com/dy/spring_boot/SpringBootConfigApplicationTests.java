@@ -1,13 +1,28 @@
 package com.dy.spring_boot;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
+import com.dy.spring_boot.entity.Dog;
+import com.dy.spring_boot.entity.Person;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class SpringBootConfigApplicationTests {
+public class SpringBootConfigApplicationTests {
+
+    @Autowired
+    private Person person;
+
+    @Autowired
+    private Dog dog;
 
     @Test
-    void contextLoads() {
+    public void testProp() {
+        System.out.println(person);
+        System.out.println(dog);
     }
 
 }

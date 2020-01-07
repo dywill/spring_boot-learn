@@ -1,0 +1,43 @@
+## 1.基本语法
+## 键值对的冒号后必须有一个空格，且键值对都对大小写敏感
+k: v
+
+## 多层级的写法
+server:
+  port: 8080
+  path: /hello
+
+## 2.值的写法
+## 一般类型，如String，Integer，Double，Boolean直接使用字符串表示即可
+## 且一般不需要添加 "" 或 ''
+str: aa
+num: 120
+flag: true
+
+## 若value添加""或''
+## ""：字符串中的特殊字符会被转义，例如\r会被解析为空格
+## ''：特俗字符不会被转义
+test01: "hello \r world"
+test02: 'hello \r world'
+
+## map和自定义类型
+## 直接多层级表示 或 行内写法
+map:
+  k1: v1
+  k2: v2
+map01: {k1: v1, k2: v2}
+
+school:
+  name: pk
+  addr: beijing
+sch: {name: qinghua, addr: beijing}
+
+## list
+## 多层级写法 或 行内表示
+list:
+  - 12
+  - 22
+list01: [1,3,4]
+
+
+
