@@ -1,9 +1,14 @@
 server:
   port: 8082
 
+spring:
+  profiles:
+    active: dev
+
 person:
   firstName: jack
-  age: 12
+  ## 也可以引用随机数
+  age: ${random.int}
   gender: false
   birth: 2020/1/1
   list:
@@ -13,5 +18,9 @@ person:
     k1: v1
     k2: v2
   pet:
-    name: doggy
+    ## ${person.firstName:aaa} 引用已有的配置，若无该配置则会取：后的值
+    name: doggy-${person.firstName:aaa}
     age: 2
+
+## 通过 --- 符号 可以将 yml 拆分为多个模块
+---
