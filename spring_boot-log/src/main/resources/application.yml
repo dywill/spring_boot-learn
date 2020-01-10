@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+## 指定日志的一些配置
+logging:
+  level: info
+  ## 指定日志存储的路径， 会在当前磁盘的根目录下输出日志
+  ## path: /logs
+spring:
+  profiles:
+    active: dev
+
+## 打印spring的自动装配日志
+debug: true

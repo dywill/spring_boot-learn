@@ -18,6 +18,12 @@
 + SpringBoot的日志框架使用
     + springboot的底层spring默认使用的是JCL，而springboot使用的是slf4j + logback
     + 调用日志应当统一使用Slf4j（即抽象层）调用打印日志。而日志的配置文件则应当使用日志实现层的日志打印
-    
+    + SpringBoot日志的实际使用
+        + 可以在application.yml全局配置文件中设置一些日志相关的属性 --- 详见application.yml
+        + 想要自己使用日志配置xml来覆盖默认的配置，可以在类路径下配置logback.xml 或 logback-spring.xml  
+        ------ 建议使用logback-spring.xml，会被spring处理后在交给日志框架解析，能够使用一些spring的高级功能  
+        ------ 详见该项目的logback-spring.xml文件  
+        ------ springboot的默认配置可以在其包下的logging文件夹中查找
+        
     
     

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+
+            <!--
+                使用了logback-spring.xml后由于配置文件经过了spring的处理，故支持一些spring的一些高级功能
+                例如：此处可以通过springProfile标签来指定不同环境下使用不同的日志配置
+            -->
+            <springProfile name="dev">
+                <pattern>%d{HH:mm:ss.SSS} +++++++++++++++++++++ [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </springProfile>
+
+            <springProfile name="!dev">
+                <pattern>%d{HH:mm:ss.SSS} --------------------- [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </springProfile>
+
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+        <!-- 在项目同路径下打印日志 -->
+        <file>log/output.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>log/output.log.%i</fileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>1MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
