@@ -1,0 +1,4 @@
+## 可以自己配置静态文件的位置，手动配置后原先的默认设置即会失效
+## spring:
+##   resources:
+##     static-locations: classpath:/hello

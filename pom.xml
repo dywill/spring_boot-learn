@@ -20,6 +20,7 @@
         <module>spring_boot-config</module>
         <module>spring_boot-autoconfig</module>
         <module>spring_boot-log</module>
+        <module>spring_boot-web</module>
     </modules>
 
 
