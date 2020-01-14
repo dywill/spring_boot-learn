@@ -49,7 +49,7 @@
     + 扩展SpringMVC
         + 可以编写WebMvcConfigurerAdapter的实现类对SpringMVC进行一些扩展（可保留默认配置）  
         --- 原理 使用可以参照 MyMVCConfig 类中演示笔记
-        + 全面接管MVC，只需要添加@EnableWebMVC便可以全面接管SpringMVC，即此时SpringBoot的默认配置会全部失效
+        + 全面接管MVC，只需要添加@EnableWebMVC便可以全面接管SpringMVC，即此时SpringBoot的默认配置会全部失效  
         --- 使用时应注意xxxConfigurer类，该类可以对该类型组件进行一些设置
         
     
