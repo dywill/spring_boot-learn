@@ -4,9 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,7 +45,7 @@ import javax.servlet.http.HttpServletResponse;
  *  1. 该注解导入了 @Import(DelegatingWebMvcConfiguration.class)， 其父类为 WebMvcConfigurationSupport
  *  2. WebMvcAutoConfiguration自动配置类在有WebMvcConfigurationSupport类时，会失效， @ConditionalOnMissingBean(WebMvcConfigurationSupport.class)
  */
-@EnableWebMvc
+//@EnableWebMvc
 @Configuration
 public class MyMVCConfig extends WebMvcConfigurerAdapter {
 
@@ -62,6 +60,15 @@ public class MyMVCConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor(new TestHandlerInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/test");
+    }
+
+    /**
+     * 此处为指定一个简单的controller
+     * @param registry
+     */
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/a").setViewName("aaa");
     }
 
     private static class TestHandlerInterceptor implements HandlerInterceptor{
