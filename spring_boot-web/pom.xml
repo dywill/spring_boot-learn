@@ -26,10 +26,28 @@
     </properties>
 
     <dependencies>
+
+        <!--
+            切换servlet容器的方式
+                1. 排除默认的spring-boot-starter-tomcat
+                2. 引入需要的对应启动器 spring-boot-starter-jetty
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <dependency>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+
 
         <!--
             导入springboot的场景启动器，启动器可以从spring的官方文档查询

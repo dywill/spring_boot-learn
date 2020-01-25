@@ -2,3 +2,6 @@
 ## spring:
 ##   resources:
 ##     static-locations: classpath:/hello
+
+server:
+  port: 8000
