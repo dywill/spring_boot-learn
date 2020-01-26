@@ -1,13 +1,12 @@
-package com.dy.spring_boot;
+package com.dy.springboot_data;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootConfigApplication {
+public class SpringBootDataJdbcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootConfigApplication.class, args);
+        SpringApplication.run(SpringBootDataJdbcApplication.class,args);
     }
-
 }

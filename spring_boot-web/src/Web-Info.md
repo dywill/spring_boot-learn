@@ -119,6 +119,9 @@
         2. 第二步：创建web应用需要的对应文件夹和文件（web.xml和WEB-INF等）
         3. 第三步：将嵌入式的tomcat的启动器的maven依赖属性指定为provided
         4. 第四步：编写一个SpringBootInitializer的子类，并调用configure方法传入springboot的主程序
-    + 原理：    
+    + 原理：
+        + 通过servlet3.0规范，web容器启动时，会扫描jar包下META-INF/services文件下的javax.servlet.ServletContainerInitializer文件中的全限定性类名
+        + web容器启动时，会扫描到spring-web下的该文件，会通过HandleTypes注解加载WebApplicationInitializer到web容器中
+        + 其中springboot中编写的SpringBootInitializer子类即为WebApplicationInitializer的子类，web容器会通过此类来创建spring的容器
                 
         
