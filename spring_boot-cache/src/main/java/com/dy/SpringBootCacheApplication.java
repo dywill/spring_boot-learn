@@ -1,16 +1,15 @@
-package com.dy.springboot_data;
+package com.dy;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
-
-@MapperScan({"com.dy.springboot_data.mapper"})
+// 开启缓存功能
+@EnableCaching
 @SpringBootApplication
-public class SpringBootDataJdbcApplication {
+public class SpringBootCacheApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDataJdbcApplication.class,args);
+        SpringApplication.run(SpringBootCacheApplication.class,args);
     }
 }

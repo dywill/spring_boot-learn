@@ -22,6 +22,7 @@
         <module>spring_boot-log</module>
         <module>spring_boot-web</module>
         <module>spring_boot-data-jdbc</module>
+        <module>spring_boot-cache</module>
     </modules>
 
 

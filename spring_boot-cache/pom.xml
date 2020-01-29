@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring_boot-data-jdbc</artifactId>
+    <artifactId>spring_boot-cache</artifactId>
 
     <dependencies>
 
@@ -18,15 +18,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--springboot应用引入数据库访问模块的方式-->
-
-        <!--
-            引入jdbc相关的启动器
-            2.0版本的springboot此处修改为spring-boot-starter-data-jdbc
-        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--引入缓存相关启动q器-->
+       <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
 
         <!--引入对应数据库的驱动-->
@@ -36,17 +36,12 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/hikari-cp/hikari-cp -->
         <dependency>
             <groupId>hikari-cp</groupId>
             <artifactId>hikari-cp</artifactId>
             <version>2.6.0</version>
         </dependency>
 
-        <!--
-            mybatis编写的springboot启动器
-            作用帮助我们导入要使用的sqlSessionFactory，并进行好了基础的相关配置
-        -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>

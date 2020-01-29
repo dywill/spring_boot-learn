@@ -1,5 +1,9 @@
 package com.dy.springboot_data;
 
+import com.dy.springboot_data.entity.Department;
+import com.dy.springboot_data.entity.Person;
+import com.dy.springboot_data.mapper.DepartmentMapper;
+import com.dy.springboot_data.mapper.PersonMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +21,39 @@ public class SpringBootDataJdbcTest {
     @Autowired
     private DataSource dataSource;
 
-
     @Test
     public void test01(){
-
+        Connection connection = null;
         try {
-            Connection connection = dataSource.getConnection();
+
+            connection = dataSource.getConnection();
+            System.out.println(dataSource.getClass().getName());
             System.out.println(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
+
+            try {
+                connection.close();
+            } catch (SQLException e) {
+            }
         }
     }
+
+    @Autowired
+    private PersonMapper personMapper;
+
+    @Autowired
+    private DepartmentMapper departmentMapper;
+
+    @Test
+    public void test02() {
+        Person person = personMapper.selectById(1);
+        System.out.println(person);
+
+        Department department = departmentMapper.selectById(1);
+        System.out.println(department);
+
+    }
+
 }

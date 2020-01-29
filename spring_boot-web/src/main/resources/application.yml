@@ -5,3 +5,8 @@
 
 server:
   port: 8000
+
+dy:
+  hello:
+    prefix: dy
+    suffix: world

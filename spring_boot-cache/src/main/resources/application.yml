@@ -5,16 +5,19 @@ spring:
     password: 123
     url: jdbc:mysql://localhost:3306/test
     driver-class-name: com.mysql.jdbc.Driver
-    # 可以通过type来指定数据库连接池的类型
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
 
-# 设值了一些mybatis下的一些相关的属性，此处为设置了开启驼峰命名法的相关映射
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-  # 指定xml配置文件的位置，若不指定则会发生bindingException
   mapper-locations:
     - classpath:mapper/*.xml
+
+
+logging:
+  level: debug
+

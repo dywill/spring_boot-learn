@@ -1,6 +1,8 @@
 package com.dy.spring_bootweb.controllers;
 
+import com.dy.autoconfigure.HelloService;
 import com.dy.spring_bootweb.ex.MyException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,5 +31,14 @@ public class HelloController {
         }
 
         return "Ex";
+    }
+
+    @Autowired
+    private HelloService helloService;
+
+    @ResponseBody
+    @RequestMapping("/starter")
+    public String testStarter(){
+        return helloService.sayHello();
     }
 }
