@@ -19,7 +19,26 @@ public class TestController {
     @GetMapping(value = "/person/{id}")
     public Person person(@PathVariable("id") Integer id){
         log.info("--- controller start ---");
-        return personService.getById(id);
+        Person cache = personService.getById(id);
+        return cache;
+    }
+
+    @GetMapping("/person")
+    public String updatePerson(Person person){
+        personService.updateById(person);
+        return "success";
+    }
+
+    @GetMapping("/delete/{pid}")
+    public String deleteById(@PathVariable("pid") Integer pid){
+        personService.deleteById(pid);
+        return "delete ok";
+    }
+
+    @GetMapping("/clear")
+    public String clearCache(){
+        personService.deleteAll();
+        return "clear all";
     }
 
 

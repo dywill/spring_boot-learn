@@ -9,7 +9,8 @@ spring:
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
-
+  redis:
+    host: 192.168.3.15
 
 mybatis:
   configuration:
@@ -21,3 +22,4 @@ mybatis:
 logging:
   level: debug
 
+debug: true

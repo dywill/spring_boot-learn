@@ -29,6 +29,11 @@
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
         <!--引入对应数据库的驱动-->
         <dependency>
             <groupId>mysql</groupId>
