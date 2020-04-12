@@ -41,4 +41,9 @@ public class HelloController {
     public String testStarter(){
         return helloService.sayHello();
     }
+
+    @RequestMapping("/ttt")
+    public String forawadTest(){
+        return "forward:/hello";
+    }
 }
